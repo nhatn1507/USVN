@@ -1,0 +1,145 @@
+
+<script src='https://code.jquery.com/jquery-3.2.1.js'> </script>
+<head>
+	<title> USD2VND Converter </title>
+	
+</head>
+<body>
+
+	<div class='container'>
+	
+		<div class='interactive'>
+			<div class='input'> </div>
+			<div class='equal-sign'> 
+				<div class='stroke upper-stroke'> </div>
+				<div class='stroke middle-space'> </div>
+				<div class='stroke lower-stroke'> </div>
+			
+			</div>
+			<div class='input'> </div>
+		</div>
+		
+		<div class='unitboxes'>
+			<div class='unit-box'></div>
+			<div class='unit-box'></div>
+		</div>
+	</div>
+
+	<div class="container">
+        <span class="text-muted">Place sticky footer content here.</span>
+  </div>
+</body>
+
+<style> 
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(to right top, #00008B, purple);
+}
+
+.container {
+	width: 60%;
+	height: 300px;
+	border: 1px solid red;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.interactive {
+	background-color: transparent;
+	border: 1px solid brown;
+	width: 100%;
+	height: 100px;
+	justify-content: space-between;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.input {
+	background-color: white;
+	width: 40%;
+	height: 100%;
+	border: 1px solid black;
+}
+
+.equal-sign {
+	width: 50px;
+	height: 30px;
+	border: 1px solid blue;
+	
+}
+
+.stroke {
+	width: 100%;
+	height: 10px;
+}
+
+.upper-stroke {
+	background: linear-gradient(to right top, yellow, red);
+}
+.lower-stroke {
+	background: linear-gradient(to right top, yellow, red);
+}
+.middle-space {
+	background-color: transparent;
+}
+
+.unitboxes {
+	border: 1px solid green;
+	height: 100px;
+	width: 100%;
+	justify-content: space-between;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+}	
+
+.unit-box {
+	border: 1px solid blue;
+	width: 40%;
+	height: 100%;
+}
+	
+
+</style>
+
+
+
+<script>
+$(document).ready(function () {
+
+	<!-- // get the most recent usd exchange rates via the "live" endpoint: -->
+	<!-- $.ajax({ -->
+		<!-- url: 'http://apilayer.net/api/live?access_key=d387ebd43ab68109d098506ab20c7017', -->
+		<!-- dataType: 'jsonp', -->
+		<!-- success: function(json) { -->
+			<!-- // exchange rata data is stored in json.quotes -->
+			<!-- var vnd1 = json.quotes.USDVND; -->
+			<!-- var xau1 = 1 / (json.quotes.USDXAU); -->
+			<!-- console.log(vnd1, xau1); -->
+		<!-- } -->
+	<!-- }); -->
+	
+	<!-- goldQuandl = 'https://www.quandl.com/api/v3/datasets/WGC/GOLD_DAILY_USD.json?api_key=TQnzWDJNQFbfP3zW-VDh' -->
+	<!-- $.getJSON(goldQuandl, function(data) { -->
+		<!-- var time = (data.dataset.refreshed_at.substring(11,19)); -->
+		<!-- var date = (data.dataset.data[0][0]); -->
+		<!-- var xau2 =  (data.dataset.data[0][1]); -->
+		<!-- console.log(time,date,xau2); -->
+	<!-- }); -->
+	
+	<!-- OpenExchangeRate = 'https://openexchangerates.org/api/latest.json?app_id=96e59c5c7e2548d284d0c8aaf71f2c68' -->
+	<!-- $.getJSON(OpenExchangeRate, function(data) { -->
+		<!-- console.log(data); -->
+		<!-- var vnd3 = data.rates.VND; -->
+		<!-- var xau3 = 1 / (data.rates.XAU); -->
+		<!-- console.log(vnd3,xau3); -->
+	<!-- }); -->
+	
+});
+
+
+</script>
