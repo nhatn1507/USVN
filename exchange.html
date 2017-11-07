@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+	<link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" integrity="sha384-dNpIIXE8U05kAbPhy3G1cz+yZmTzA6CY8Vg/u2L9xRnHjJiAK76m2BIEaSEV+/aU" crossorigin="anonymous">
 </head>
 
 <body>
@@ -15,18 +16,21 @@
 		<div class='interactive'>
 
 
-		  <div class="input-group">
+		  <div class="input-group group1">
 			
-			<input type="number" class="form-control userinput" aria-label="Input group" aria-describedby="btnGroupAddon2">
-			<span class="input-group-addon" id="preinput1">@</span>
+			<input type="number" class="form-control userinput userinput1" aria-label="Input group" aria-describedby="btnGroupAddon2">
+			<span class="input-group-addon" id="preinput1"><i class="fa fa-money" aria-hidden="true"></i></span>
 		  </div>
 
-			<div class='equal-sign'><i class="material-icons swaparrow">swap_horiz</i></div>
+			<div class='equal-sign'>
+				<i class="fa fa-refresh fa-spin  fa-fw"></i>
+<span class="sr-only">Loading...</span>
+			</div>
 
 		
-		  <div class="input-group">
+		  <div class="input-group group2">
     
-			<input type="number" class="form-control userinput" aria-label="Input group" aria-describedby="btnGroupAddon2">
+			<input type="number" class="form-control userinput userinput2" aria-label="Input group" aria-describedby="btnGroupAddon2">
 			<span class="input-group-addon" id="preinput2">@</span>
 		  </div>
 		
@@ -34,8 +38,14 @@
 		
 		<div class='unitboxes'>
 			<div class='unit-box'>
-				<button type="button" class="btn btn-outline-dark btn-sm">Dark</button>
-		
+				<button type="button" class="btn btn-outline-dark btn-sm">USD</button>
+				<button type="button" class="btn btn-outline-dark btn-sm">OZ</button>
+				<button type="button" class="btn btn-outline-dark btn-sm">LUONG</button>
+				<button type="button" class="btn btn-outline-dark btn-sm">VND</button>
+				<button type="button" class="btn btn-outline-dark btn-sm">KG</button>
+				<button type="button" class="btn btn-outline-dark btn-sm">CHI</button>
+			
+			
 			</div>
 			<div class='unit-box'>
 			
@@ -51,11 +61,37 @@
 </body>
 
 <style> 
-.btn {
+.btn-outline-dark  {
 	color: white;
+	width: 33%;
+	height: 48%;
+	padding: 2px 4px;
+	border-radius: 6px;
+	background-color: 0A2244;
 }
+
+
 .btn:hover {
-	background-color: black;
+	background-color: #DC3CAF;
+}
+
+.unitboxes {
+	border: 1px solid green;
+	height: 100px;
+	width: 100%;
+	justify-content: space-between;
+	display: flex;
+}	
+
+.unit-box {
+	border: 1px solid blue;
+	width: 40%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: row;
 }
 
 
@@ -64,7 +100,8 @@
 	margin-top: 50px;
 	height: 100px;
 	width: 80%;
-	background-color: red;
+	border: 1px solid blue;
+	color: white;
 }
 
 
@@ -73,8 +110,10 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	
+	 
+	background: linear-gradient(to right top, #001f3f,#8C2E5E);
 	flex-direction: column;
-	background: linear-gradient(to right top, #00008B, purple);
 }
 
 .container {
@@ -121,33 +160,16 @@ body {
 	border: 1px solid blue;
 	
 }
-.swaparrow {
+.fa-refresh {
 	font-size: 2.5em;
 	color: white;
 }
 
 
-
-
-.unitboxes {
-	border: 1px solid green;
-	height: 100px;
-	width: 100%;
-	justify-content: space-between;
-	display: flex;
-	flex-direction: row;
-	align-items: flex-start;
-}	
-
-.unit-box {
-	border: 1px solid blue;
-	width: 40%;
-	height: 100%;
-}
 	
 input[type="number"] {
 	outline: none !important;
-	<!-- THIS DOESNT WORK, BOOTSTRAP 4 BETA SUCKS SO BAD -->
+	<!-- THIS DOESNT WORK, BOOTSTRAP 4 BETA SUCKS SO BAD -->	
 }
 
 input[type="number"]::-webkit-outer-spin-button,
@@ -163,11 +185,17 @@ To hide the spin box in inputs  -->
 
 <script src='https://code.jquery.com/jquery-3.2.1.js'> </script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<script src="https://cdn.rawgit.com/jwarby/jquery-awesome-cursor/master/dist/jquery.awesome-cursor.min.js"></script></pre>
 
 <script>
 $(document).ready(function () {
 
+	$('.userinput1').first().mouseover(function() {
+		$(this).first().awesomeCursor('money', {
+			color: '#2ECC40', size: '25'
+		});
+	});
+	
 	<!-- // get the most recent usd exchange rates via the "live" endpoint: -->
 	<!-- $.ajax({ -->
 		<!-- url: 'http://apilayer.net/api/live?access_key=d387ebd43ab68109d098506ab20c7017', -->
